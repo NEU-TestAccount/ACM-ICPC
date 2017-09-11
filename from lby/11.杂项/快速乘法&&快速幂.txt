@@ -1,0 +1,26 @@
+long long ksc( long long a, long long b, long long mo )
+{
+    long long ans=0;
+    while(b)
+    {
+        if(b&1)
+        {
+            b--;
+            ans=(ans+a)%mo;
+        }
+        b/=2;
+        a = (a+a)%mo;
+    }
+    return ans;
+}
+long long ksm(long long a,long long b,long long mo)
+{
+    long long s=1;
+    while(b)
+    {
+        if(b&1)s=ksc(s,a,mo);
+        a=ksc(a,a,mo);
+        b=b>>1;
+    }
+    return s;
+}
