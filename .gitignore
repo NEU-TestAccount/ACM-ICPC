@@ -1,0 +1,5 @@
+# 注释
+*.exe
+test.txt
+*/test.txt
+
