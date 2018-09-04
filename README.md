@@ -205,3 +205,12 @@
 1. 高精度
 
 1. 快速读入
+
+1. 黑科技
+	1. Berlekamp-Massey
+	1. Stern-Brocot Tree
+	1. 五边形数&拆分数
+	1. Meissel-Lehmer Method O(N^{2/3})计算N以内素数个数
+	1. Method of Four Russians 快速处理元素取值范围有限的矩阵乘法
+
+
