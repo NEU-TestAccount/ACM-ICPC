@@ -1,59 +1,216 @@
-# KACTL
+# ACM-ICPC模板目录
 
-This repo hosts KACTL, KTH's ICPC team reference document.
-It consists of 25 pages of copy-paste:able code, for use in ACM-ICPC-style programming competitions.
+## 字符串处理
 
-See [kactl.pdf](https://github.com/kth-competitive-programming/kactl/blob/master/kactl.pdf) for the final, browsable version,
-and [content/](https://github.com/kth-competitive-programming/kactl/tree/master/content) for raw source code.
+1. Trie树
 
-## Aspirations
+1. KMP算法
 
-KACTL algorithms should be: useful, short, fast enough, readable, and if relevant, easy to modify.
-Short and readable sometimes conflict -- usually then short takes precedence, although
-the algorithms should still be made easy to type in and hard to make typos in (since ICPC-style contests
-require you to copy them from paper).
+1. Aho-Corasick自动机
 
-They should *not* be overly generic, since code is manually typed and that just adds overhead.
-Due to space issues, we also exclude algorithms that are very common/simple (e.g., Dijkstra), or very uncommon (general weighted matching).
+1. Manacher算法——最长回文子串
 
-If you feel that something is missing, could be cleaned up, or notice a bug, please file an issue or send us a pull request!
+1. *Palindromic Tree——回文树*
 
-## Hacking on KACTL
+1. 后缀数组
 
-For coding style, try to copy existing code.
-Each algorithm should contain a header with the author of the code, the date it
-was added, a description of the algorithm, its testing status, and preferably also
-source, license and time complexity.
-Line width is 63 chars, with tabs for indentation (tab = 2 spaces in the pdf).
+1. 后缀自动机
 
-When adding/removing files, edit the corresponding `chapter.tex` file as well.
-`chapter.tex` also contains all non-source code, e.g. math and textual descriptions.
-For nicer alignment you might want to use `\hardcolumnbreak`, `\columnbreak` or `\newpage` commands,
-though this is usually only done before important contests, and not on master.
+1. 字符串哈希
 
-To build KACTL, type `make kactl` (or `make fast`) on a \*NIX machine -- this will update `kactl.pdf`.
-(Windows might work as well, but is not tested.) `doc/README` has a few more notes about this.
+1. 最小表示法
 
-kactl.pdf is to be kept to 25 pages + cover page.
-Occasionally the generated kactl.pdf is committed to the repo for convenience, but not too often because it makes git operations slower.
+## 数论
 
-Before printing KACTL for an official contest, you may want to locally change the arguments to `\team`, `\contest`, etc. in build/kactl.tex to something more fitting.
+1. Eratosthenes筛法
 
-To upstream your changes, [send a pull request](https://help.github.com/articles/fork-a-repo/).
+1. **Euler筛法**（积性函数常用）
 
-## Testing
+1. 质因数分解
 
-KACTL algorithms are tested manually, on online judges and/or using fuzz-tests (see the `fuzz-tests` directory).
-Simple variable renamings etc. don't need testing, but it's prudent to at least run `./test-compiles.sh file.h` to make sure the file still compiles.
+1. （扩展）欧几里得算法——模意义下的二元一次方程
 
-`old-unit-tests` contains a couple of broken unit tests, last touched about ten years ago.
+1. 费马小定理（欧拉定理）
 
-## License
+1. *线性递推数论拟元*
 
-As usual for competitive programming, the licensing situation is a bit unclear.
-Many source files are marked with license (we try to go with
-[CC0](https://creativecommons.org/share-your-work/public-domain/cc0/)), but many also aren't.
-Presumably good will is to be assumed from other authors, though, and in many cases permission should not be needed since the code is not distributed.
-To help trace things back, sources and authors are noted in source files.
+1. 中国剩余定理
 
-Everything in `fuzz-tests` and `build` is implicitly CC0.
+1. Miller-Rabin算法（随机大素数测试）
+
+1. Pollard-Rho算法（随机大整数质因式分解）
+
+1. Baby-Step-Giant-Step算法——求离散对数
+
+## 代数
+
+1. 莫比乌斯反演
+
+1. 矩阵乘法
+
+## 组合数学&概率论
+
+1. 求组合数
+	* DP
+	* 线性递推（数论意义下）
+	* Lucas定理
+
+1. 容斥原理
+
+1. Burnside引理——等价类计数
+
+## 博弈
+
+1. 基本原理
+
+1. Sprague-Grudy定理——公平组合博弈(Impartial Combinatori Games)
+
+1. Nim！博弈
+
+1. Bash博弈
+
+1. Wythoff博弈
+
+1. Zeckendorf定理——Fibonacci博弈
+
+## 数值计算
+
+1. 高斯消元
+
+1. 二分与三分法
+
+1. Lagrange乘数法
+
+1. 牛顿迭代
+
+1. Simpson积分
+
+## 多项式
+	参考pyx的多项式导论
+1. 多项式乘法
+	1. Fast Fourier Transform
+	1. Number Theory Transform
+
+1. Fast Walsh-Hadamard Transform——基于位运算的卷积
+
+1. 多项式除法
+
+## 数据结构
+
+1. 树状数组 (Fenwick Tree)
+
+1. 堆（可以添加动态修改的功能）
+
+1. 线段树
+	1. 单值维护
+	1. 单值维护+多种区间修改
+	1. 多值维护
+	1. 可持久化
+	1. 动态开点
+
+1. DFS序列
+
+1. 伸展树 (Splay Tree)
+
+1. 树堆 (Treap)
+
+1. 树链剖分
+
+1. 动态树（Link-Cut Tree）
+
+## 图论
+
+1. 最短路
+	1. Dijkstra 算法
+	1. spfa 算法 （Bellman-Ford算法的队列优化）
+	1. Floyd 算法
+	1. *差分约束*
+
+1. 最大公共祖先
+	1. Tarjan LCA算法（线性的离线算法）
+	1. 倍增LCA
+	1. DFS序列+RMQ
+
+1. 生成树
+	1. Kruskal 算法
+	1. Prim 算法
+	1. 曼哈顿距离最小生成树
+	1. Matrix Tree定理——生成树计数
+
+1. 图的连通性
+	1. 强连通分量
+	1. 割点 & 桥
+	1. 边双连通 & 点双连通
+	1. 最小割集——Stoer-Wagner算法
+
+1. 树的同构
+
+1. 朱刘算法——最小树形图
+
+1. 二分图匹配
+	1. 匈牙利算法
+	1. 网络流建图
+	1. KM算法——二分图最大权匹配
+	1. 二分图多重匹配
+
+1. 网络流
+
+1. 2-SAT问题
+
+1. 曼哈顿距离最小生成树
+
+1. 带花树算法——一般图匹配
+
+## 计算几何
+
+1. 通用函数
+
+1. 凸包
+
+1. 半平面交
+
+1. 旋转卡壳
+
+## 动态规划
+
+1. 背包问题
+
+1. 四边形不等式
+
+1. 状态压缩
+	1. 枚举子集
+	1. 插头DP
+
+1. 数位DP
+
+## 贪心
+
+1. 拟阵
+
+1. 经典问题
+
+## 杂项
+
+1. 分治
+	1. 整体二分
+	1. 陈丹琦分治
+	1. 树的点分治
+
+1. 分块
+
+1. 倍增
+
+1. 手动模拟调用栈
+
+1. 高精度
+
+1. 快速读入
+
+1. 黑科技
+	1. Berlekamp-Massey
+	1. Stern-Brocot Tree
+	1. 五边形数&拆分数
+	1. Meissel-Lehmer Method O(N^{2/3})计算N以内素数个数
+	1. Method of Four Russians 快速处理元素取值范围有限的矩阵乘法
+
+
