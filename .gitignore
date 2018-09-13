@@ -2,4 +2,8 @@
 *.exe
 test.txt
 */test.txt
+*.synctex.gz
+*.toc
+*.aux
+*.log
 
