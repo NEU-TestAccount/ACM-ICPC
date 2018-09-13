@@ -7,3 +7,6 @@ test.txt
 *.aux
 *.log
 
+build/
+a.out
+header.tmp
