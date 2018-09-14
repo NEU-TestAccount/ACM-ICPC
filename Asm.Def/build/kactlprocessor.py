@@ -179,6 +179,7 @@ def getfilename(input):
 
 def print_header(data, outstream):
     parts = data.split('|')
+    print("data=", parts);
     until = parts[0].strip() or parts[1].strip()
     if not until:
         # Nothing on this page, skip it.
@@ -204,8 +205,11 @@ def main():
     instream = sys.stdin
     outstream = sys.stdout
     print_header_value = None
+    #print("args=", sys.argv)
     try:
         opts, args = getopt.getopt(sys.argv[1:], "ho:i:l:c:", ["help", "output=", "input=", "language=", "caption=", "print-header="])
+        #print("opts=", opts);
+        #print("args=", args);
         for option, value in opts:
             if option in ("-h", "--help"):
                 print("This is the help section for this program")

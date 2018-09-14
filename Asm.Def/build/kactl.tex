@@ -1,16 +1,23 @@
 \documentclass[10pt, a4paper, notitlepage]{report}
 \usepackage{kactlpkg}
-\kactlcontentdir{../content}
+\usepackage{ctex}
 
-\university{KTH}{KTH Royal Institute of Technology}{kth}
-\team{Omogen Heap}{Simon Lindholm, Johan Sannemo, Mårten Wiman}
+\kactlcontentdir{../content}
+%\DeclareUnicodeCharacter{1B}{2}
+
+\university{NEU}{Northeastern University, Shenyang}{neu}
+\team{Test}{Asm.Def, lby2016, Haizs}
 \contest{ACM-ICPC World Finals 2017}{May 24, 2017}
 
 \begin{document}
 	\maketeampage
+	\begin{multicols*}{3}
+	\tableofcontents
+	\end{multicols*}
+	\newpage
 	% Small KACTL header on the first page:
 	% \maketitle{``One Last Time'' Edition}{\today}
-	\begin{multicols*}{3}
+	\begin{multicols*}{2}
 	\setcounter{tocdepth}{0}
 	\thispagestyle{fancy}
 	\kactlchapter{contest}
@@ -24,6 +31,7 @@
 	\kactlchapter{strings}
 	\kactlchapter{various}
 	\end{multicols*}
+	\tableofcontents
 
 	\begin{multicols*}{3}
 	\kactlchapter{appendix}
