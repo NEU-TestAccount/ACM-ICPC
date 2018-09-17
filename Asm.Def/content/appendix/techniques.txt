@@ -1,50 +1,51 @@
-Recursion
-Divide and conquer
+Recursion 递归
+Divide and conquer 分治
 	Finding interesting points in N log N
-Algorithm analysis
-	Master theorem
-	Amortized time complexity
-Greedy algorithm
-	Scheduling
-	Max contigous subvector sum
-	Invariants
-	Huffman encoding
-Graph teory
-	Dynamic graphs (extra book-keeping)
-	Breadth first search
-	Depth first search
+Algorithm analysis 复杂度分析
+	Master theorem 主定理
+	Amortized time complexity 摊还分析
+Greedy algorithm 贪心
+	Scheduling 
+	Max contiguous subvector sum
+	Invariants 循环不变量
+	Huffman encoding 哈夫曼编码
+Graph theory 图论
+	Dynamic graphs (extra book-keeping) 
+	Breadth first search BFS
+	Depth first search DFS
 	* Normal trees / DFS trees
-	Dijkstra's algoritm
-	MST: Prim's algoritm
-	Bellman-Ford
-	Konig's theorem and vertex cover
-	Min-cost max flow
-	Lovasz toggle
-	Matrix tree theorem
-	Maximal matching, general graphs
-	Hopcroft-Karp
-	Hall's marriage theorem
-	Graphical sequences
-	Floyd-Warshall
-	Euler cycles
-	Flow networks
-	* Augumenting paths
+	Dijkstra's algoritm 单源最短路
+	MST: Prim's algoritm 最小生成树
+	Bellman-Ford 负权-单元最短路
+	Konig's theorem and vertex cover 柯尼希定理：二分图最小点覆盖数=最大匹配数
+	Min-cost max flow 费用流
+	Lovasz toggle 给定x，y，对图染色，使得每个红色点的红色邻居不超过x，每个蓝色点的蓝色邻居不超过y
+	Matrix tree theorem 生成树计数，（度数矩阵-邻接矩阵）的行列式=生成树个数
+	Maximal matching, general graphs 带花树算法
+	Hopcroft-Karp O(Nsqrt(M))求最大匹配
+	Hall's marriage theorem 二分图存在完美匹配的条件：X中任意k个点都至少与Y中k个点相邻
+	Graphical sequences 图的度数序列的性质
+	Floyd-Warshall 多源多汇最短路
+	Euler cycles 欧拉回路
+	Flow networks 网络流
+	* Augumenting paths 增广路
 	* Edmonds-Karp
-	Bipartite matching
-	Min. path cover
-	Topological sorting
-	Strongly connected components
+	* Push-Relabel 预流推进重贴标签
+	Bipartite matching 二分图匹配
+	Min. path cover 最小路径覆盖
+	Topological sorting 拓扑排序
+	Strongly connected components 强连通分量
 	2-SAT
-	Cut vertices, cut-edges och biconnected components
-	Edge coloring
+	Cut vertices, cut-edges och biconnected components 割顶、桥、双连通分量
+	Edge coloring 边集染色
 	* Trees
-	Vertex coloring
+	Vertex coloring 点集染色
 	* Bipartite graphs (=> trees)
-	* 3^n (special case of set cover)
-	Diameter and centroid
-	K'th shortest path
-	Shortest cycle
-Dynamic programming
+	* 3^n (special case of set cover) 
+	Diameter and centroid 树的直径和重心
+	K'th shortest path K短路
+	Shortest cycle 最小环，用Floyd求解
+Dynamic programming 动态规划
 	Knapsack
 	Coin change
 	Longest common subsequence
@@ -55,36 +56,37 @@ Dynamic programming
 	Dynprog over subsets
 	Dynprog over probabilities
 	Dynprog over trees
-	3^n set cover
+	3^n set cover 集合覆盖
 	Divide and conquer
 	Knuth optimization
 	Convex hull optimizations
 	RMQ (sparse table a.k.a 2^k-jumps)
 	Bitonic cycle
 	Log partitioning (loop over most restricted)
-Combinatorics
-	Computation of binomial coefficients
-	Pigeon-hole principle
-	Inclusion/exclusion
-	Catalan number
-	Pick's theorem
+Combinatorics 组合
+	Computation of binomial coefficients 二项式系数
+	Pigeon-hole principle 鸽笼原理
+	Inclusion/exclusion 容斥原理
+	Catalan number 卡特兰数
+	Pick's theorem 皮克定理，格点多边形面积=（边界格点数）/2 + 内部格点数 - 1
 Number theory
 	Integer parts
 	Divisibility
-	Euclidean algorithm
-	Modular arithmetic
+	Euclidean algorithm 欧几里得算法-求gcd
+	Modular arithmetic 同余算术
 	* Modular multiplication
 	* Modular inverses
 	* Modular exponentiation by squaring
-	Chinese remainder theorem
-	Fermat's little theorem
-	Euler's theorem
-	Phi function
-	Frobenius number
-	Quadratic reciprocity
-	Pollard-Rho
-	Miller-Rabin
-	Hensel lifting
+	Chinese remainder theorem 中国剩余定理 x=Σ(ai * ti * Mi), ti * Mi = 1 (mod mi), Mi = Πm / mi
+	Fermat's little theorem 费马小定理
+	Euler's theorem 欧拉定理
+	Phi function 欧拉函数
+	Frobenius number =Coin Problem, 指最大的不能用给定的若干种硬币凑成的数。n=2:xy-x-y; n=3:
+	Quadratic reciprocity 二次互反定律. p,q为奇素数，定义
+		f(q,p)={1 if n^2=q mod p for some integer n}{-1 otherwise},则f(p,q)*f(q,p)=(-1)^{(p-1)/2*(q-1)/2}
+	Pollard-Rho 期望时间O(N^{1/4})的随机化质因数分解
+	Miller-Rabin 基于概率的素性测试，可以确保数据在一定范围内时不会出错
+	Hensel lifting t为f(r)=0 mod p^{k-1}的根，则f(r+tp^{k-1})=f(r)+tp^{k-1}f'(r) mod p^k
 	Vieta root jumping
 Game theory
 	Combinatorial games
