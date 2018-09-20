@@ -87,7 +87,8 @@ Number theory
 	Pollard-Rho 期望时间O(N^{1/4})的随机化质因数分解
 	Miller-Rabin 基于概率的素性测试，可以确保数据在一定范围内时不会出错
 	Hensel lifting t为f(r)=0 mod p^{k-1}的根，则f(r+tp^{k-1})=f(r)+tp^{k-1}f'(r) mod p^k
-	Vieta root jumping
+	Vieta root jumping 对于任意有序对(a,b)，要证明k=(f(a,b)/g(a,b,ab))（其中f为二次函数，g为一次函数）的性质时，
+		将等式整理成关于a,b中较大值（不妨取a）的函数，利用Vieta定理解出另一个根x2，用(x2,b)的性质归纳证明(a,b)
 Game theory
 	Combinatorial games
 	Game trees
@@ -95,7 +96,7 @@ Game theory
 	Nim
 	Games on graphs
 	Games on graphs with loops
-	Grundy numbers
+	Grundy numbers Sprague-Grundy定理
 	Bipartite games without repetition
 	General games without repetition
 	Alpha-beta pruning
