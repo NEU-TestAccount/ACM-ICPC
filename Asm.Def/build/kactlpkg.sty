@@ -20,6 +20,7 @@
 \usepackage[parfill]{parskip}           % For compact enumerations
 \usepackage[dvipsnames]{xcolor}
 \usepackage[normalem]{ulem}
+\usepackage{xeCJK}
 
 % Config commands
 \newcommand{\subtitle}[1]{
@@ -73,8 +74,8 @@
 \lhead{\@unishort}
 \chead{\hspace{3mm}\textbf{
 	\immediate\write18{
-		%python2 kactlprocessor.py --print-header "\splitbotmarks\hdrmark|\botmarks\hdrmark" -o header2.tmp
-		python2 kactlprocessor.py --print-header \unexpanded{"}\splitbotmarks\hdrmark\unexpanded{\|}\botmarks\hdrmark\unexpanded{"} -o header2.tmp
+		%python3 kactlprocessor.py --print-header "\splitbotmarks\hdrmark|\botmarks\hdrmark" -o header2.tmp
+		python3 kactlprocessor.py --print-header \unexpanded{"}\splitbotmarks\hdrmark\unexpanded{\|}\botmarks\hdrmark\unexpanded{"} -o header2.tmp
 		}\immediate\input{header2.tmp}}}
 \rhead{\thepage}
 %\lhead{}\chead{\thepage}\rhead{}
@@ -160,19 +161,20 @@
     \string^%
   \endgroup
 }
-\renewcommand*{\tilde}{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}
+%\renewcommand*{\tilde}{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}
 
 % Configure source code listings
+\setCJKmonofont{AdobeFangsongStd-Regular}
 \lstset{language=C++}
 \lstset{morekeywords={alignas,alignof}}
 \lstset{frame=t}
-\lstset{tabsize=4}
+\lstset{tabsize=2}
 \lstset{showstringspaces=false}
 \lstset{breaklines=true}
 \lstset{basicstyle=\small\ttfamily}
 \lstset{commentstyle=\normalfont\itshape}
 \lstset{literate={^}{\caret}{1}}
-\lstset{literate={~}{\tilde}{1}}
+%\lstset{literate={~}{\tilde}{1}} %xeLatex报错
 \lstset{emptylines=*1}
 \lstset{inputencoding=utf8}
 \lstset{aboveskip=3pt}
@@ -184,7 +186,7 @@
 \setlength{\columnsep}{10pt} % Multicol separation margin
 \setcounter{tocdepth}{1} % Table of contents depth
 
-\pdfsuppresswarningpagegroup=1
+%\pdfsuppresswarningpagegroup=1
 
 \newcommand{\maketeampage}{
 	\pagestyle{empty}
@@ -240,10 +242,10 @@
 	\penalty-100
 	#2
 	\immediate\write18{ubuntu run rm -f kactl.tmp} % Don't include old kactl.tmp on failure.
-	\immediate\write18{ubuntu run echo "python2 kactlprocessor.py -i "}
+	\immediate\write18{ubuntu run echo "python3 kactlprocessor.py -i "}
 	\immediate\write18{ubuntu run echo "\@kactldir/#2"}
 	\immediate\write18{ubuntu run echo "-o kactl.tmp #1"}
-	\immediate\write18{python2 kactlprocessor.py -i "\@kactldir/#2" -o kactl.tmp #1}
+	\immediate\write18{python3 kactlprocessor.py -i "\@kactldir/#2" -o kactl.tmp #1}
 	\immediate\input{kactl.tmp}
 }
 

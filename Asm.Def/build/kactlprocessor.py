@@ -4,7 +4,7 @@
 # Source code preprocessor for KACTL building process.
 # Written by Håkan Terelius, 2008-11-24
 
-from __future__ import print_function
+#from __future__ import print_function
 import sys
 import getopt
 

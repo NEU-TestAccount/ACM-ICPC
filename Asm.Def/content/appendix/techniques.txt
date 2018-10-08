@@ -63,12 +63,13 @@ Dynamic programming 动态规划
 	RMQ (sparse table a.k.a 2^k-jumps)
 	Bitonic cycle
 	Log partitioning (loop over most restricted)
-Combinatorics 组合
+Combinatorics & Probability theory 组合 & 概率论
 	Computation of binomial coefficients 二项式系数
 	Pigeon-hole principle 鸽笼原理
 	Inclusion/exclusion 容斥原理
 	Catalan number 卡特兰数
 	Pick's theorem 皮克定理，格点多边形面积=（边界格点数）/2 + 内部格点数 - 1
+	Generated Funcions 生成函数
 Number theory
 	Integer parts
 	Divisibility
@@ -100,7 +101,10 @@ Game theory
 	Bipartite games without repetition
 	General games without repetition
 	Alpha-beta pruning
-Probability theory
+	Anti-Nim 按照“是否存在大于1的堆”和“NIM_SUM”分类讨论
+	Wythoff Game 威佐夫博弈 “奇异局势”必败，反之必胜 第k个奇异局势：(x,x+k),x为之前的奇异局势中未出现的数
+	Bash Game 巴什博弈 一堆石子共N个，每次最多取M个最小取1个 判断是否为(M+1)的倍数
+	Partisan Combinatorial Games 不平等博弈 IOI2009冬令营论文《浅谈如何解决不平等博弈问题》
 Optimization
 	Binary search
 	Ternary search

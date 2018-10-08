@@ -1,4 +1,4 @@
-LATEXCMD = pdflatex.exe -shell-escape
+LATEXCMD = xelatex.exe -shell-escape
 export max_print_line = 1048576
 
 .PHONY: help
